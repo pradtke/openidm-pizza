@@ -8,7 +8,6 @@ Testing different openidm setups and integrations, all centered around pizza
 If you startup `openidm` in the normal fashion, and try accessing a `pizza` resource you'll get an error
 
     curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" http://localhost:8080/openidm/managed/pizza/?_queryId=query-all-ids | jq '.'
-
 ```json
 {
   "message": "No route for pizza/",
@@ -41,9 +40,9 @@ Then we edit `manged-obj-sample/conf/managed.json` and tell it about the managed
         }
 ```
 
-Now if you start up `OpenIDM` useing the sample directory you the pizza query will work
+Now if you start up `OpenIDM` useing the sample directory, and your pizza query will work
 
-  ./startup.sh -p ../openidm-pizza/manged-obj-sample/
+`./startup.sh -p ../openidm-pizza/manged-obj-sample/`
 
 
     curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" http://localhost:8080/openidm/managed/pizza/?_queryId=query-all-ids | jq '.'
