@@ -18,7 +18,7 @@ If you startup `openidm` in the normal fashion, and try accessing a `pizza` reso
 
 The [OpenIDM documentation](http://openidm.forgerock.org/doc/integrators-guide/index.html#custom-managed-objects) provides instructions for creating our custom object.
 
-We edit `manged-obj-sample/conf/repo.orientdb.json` and add this OrientDB class so the database knows about the new object
+We edit `managed-obj-sample/conf/repo.orientdb.json` and add this OrientDB class so the database knows about the new object
 
 ```json
 	    "managed_pizza" : {
@@ -32,7 +32,7 @@ We edit `manged-obj-sample/conf/repo.orientdb.json` and add this OrientDB class 
             },
 ``` 
 
-Then we edit `manged-obj-sample/conf/managed.json` and tell it about the managed type
+Then we edit `managed-obj-sample/conf/managed.json` and tell it about the managed type
 
 ```json
         {
@@ -42,7 +42,7 @@ Then we edit `manged-obj-sample/conf/managed.json` and tell it about the managed
 
 Now if you start up `OpenIDM` useing the sample directory, and your pizza query will work
 
-`./startup.sh -p ../openidm-pizza/manged-obj-sample/`
+`./startup.sh -p ../openidm-pizza/managed-obj-sample/`
 
 
     curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" http://localhost:8080/openidm/managed/pizza/?_queryId=query-all-ids | jq '.'
